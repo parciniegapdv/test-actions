@@ -36,7 +36,7 @@ jobs:
           npm install
 
       - if: ${{ github.event.inputs.functions != 'all' }}
-        name: Deploy ${{ github.event.inputs.functions != 'all' }} to firebase
+        name: Deploy ${{ github.event.inputs.functions }} to firebase
         uses: w9jds/firebase-action@master
         with:
           args: deploy --only functions:${{ github.event.inputs.functions }}
